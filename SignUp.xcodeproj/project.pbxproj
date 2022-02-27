@@ -10,6 +10,8 @@
 		D849297027CBA2CB001459AC /* BasicSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849296F27CBA2CB001459AC /* BasicSignUpViewController.swift */; };
 		D849297227CBA58B001459AC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849297127CBA58B001459AC /* FirstViewController.swift */; };
 		D849297427CBA597001459AC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849297327CBA597001459AC /* SecondViewController.swift */; };
+		D849297627CBB228001459AC /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849297527CBB228001459AC /* UserInformation.swift */; };
+		D849297827CBB4A3001459AC /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D849297727CBB4A3001459AC /* ThirdViewController.swift */; };
 		D89B825027848EE300FC729D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B824F27848EE300FC729D /* AppDelegate.swift */; };
 		D89B825227848EE300FC729D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B825127848EE300FC729D /* SceneDelegate.swift */; };
 		D89B825427848EE300FC729D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B825327848EE300FC729D /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 		D849296F27CBA2CB001459AC /* BasicSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSignUpViewController.swift; sourceTree = "<group>"; };
 		D849297127CBA58B001459AC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D849297327CBA597001459AC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D849297527CBB228001459AC /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		D849297727CBB4A3001459AC /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D89B824C27848EE300FC729D /* SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89B824F27848EE300FC729D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D89B825127848EE300FC729D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				D849296F27CBA2CB001459AC /* BasicSignUpViewController.swift */,
 				D849297127CBA58B001459AC /* FirstViewController.swift */,
 				D849297327CBA597001459AC /* SecondViewController.swift */,
+				D849297527CBB228001459AC /* UserInformation.swift */,
+				D849297727CBB4A3001459AC /* ThirdViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -148,10 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D849297427CBA597001459AC /* SecondViewController.swift in Sources */,
+				D849297627CBB228001459AC /* UserInformation.swift in Sources */,
 				D849297227CBA58B001459AC /* FirstViewController.swift in Sources */,
 				D89B825427848EE300FC729D /* ViewController.swift in Sources */,
 				D849297027CBA2CB001459AC /* BasicSignUpViewController.swift in Sources */,
 				D89B825027848EE300FC729D /* AppDelegate.swift in Sources */,
+				D849297827CBB4A3001459AC /* ThirdViewController.swift in Sources */,
 				D89B825227848EE300FC729D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  ThirdViewController.swift
 //  SignUp
 //
 //  Created by 이범준 on 2022/02/27.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
-    @IBOutlet weak var signUpID: UITextField!
-    
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.label.text = UserInformation.shared.userID
         // Do any additional setup after loading the view.
     }
     
