@@ -54,7 +54,6 @@
         <!--Navigation Controller-->
         <scene sceneID="63E-tt-l70">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="52G-9K-cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ep-Zw-hN3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="esJ-uM-9XW">
@@ -66,6 +65,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XsW-X8-fNl"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52G-9K-cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28" y="84"/>
         </scene>
@@ -146,18 +146,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkEmptyID:" destination="3pY-8f-F44" eventType="editingDidEnd" id="6rQ-n4-6uy"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUg-2P-eah">
                                 <rect key="frame" x="188" y="133" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkEmptyPassword:" destination="3pY-8f-F44" eventType="editingDidEnd" id="qmY-sF-cfu"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="epv-oF-Z3c">
                                 <rect key="frame" x="188" y="180" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checklEqualPassword:" destination="3pY-8f-F44" eventType="editingDidEnd" id="SOI-YW-U9S"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXe-yJ-7K3">
                                 <rect key="frame" x="256" y="674" width="49" height="31"/>
@@ -169,6 +178,14 @@
                                     <segue destination="J5o-ya-hZf" kind="show" id="Vse-ar-7l4"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sld-71-jpS">
+                                <rect key="frame" x="32" y="259" width="336" height="407"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oFe-tV-W2m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -176,6 +193,8 @@
                     <navigationItem key="navigationItem" id="nOp-Jx-6nF"/>
                     <connections>
                         <outlet property="checkPassword" destination="epv-oF-Z3c" id="6ou-Cs-H2b"/>
+                        <outlet property="nextButton" destination="aXe-yJ-7K3" id="sOv-bA-22B"/>
+                        <outlet property="selfIntroduce" destination="Sld-71-jpS" id="hzC-ns-WEz"/>
                         <outlet property="userID" destination="yBf-Pm-4fJ" id="cVw-Vu-EOb"/>
                         <outlet property="userPassword" destination="MUg-2P-eah" id="ef2-L9-Ygb"/>
                     </connections>
@@ -233,8 +252,14 @@
     </scenes>
     <resources>
         <image name="signUpImage" width="2567" height="1943"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
