@@ -8,10 +8,10 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    
+
     var essentialFieldList = [UITextField]()
-    var a = 0
-    
+    var cnt = 0
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userID: UITextField!
     @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var checkPassword: UITextField!
@@ -22,6 +22,7 @@ class SecondViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    
     @IBAction func touchUpSetButton(_ sender: UIButton) {
         UserInformation.shared.userID = userID.text
         UserInformation.shared.userPassword = userPassword.text
@@ -37,6 +38,15 @@ class SecondViewController: UIViewController {
         userPassword.delegate = self
         checkPassword.delegate = self
         nextButton.isEnabled = false
+        
+        let settingTap = UITapGestureRecognizer(target: self, action: #selector(settingTapped))
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(settingTap)
+
+    }
+    
+    @objc func settingTapped() {
+        presentAlbum()
     }
     
     @IBAction func dismissModal() {
@@ -44,13 +54,12 @@ class SecondViewController: UIViewController {
     }
     
     func checkEnabledButton() {
-        if userID.text?.isEmpty == false && userPassword.text?.isEmpty == false && selfIntroduce.text?.isEmpty == false && userPassword.text == checkPassword.text {
+        if userID.text?.isEmpty == false && userPassword.text?.isEmpty == false && selfIntroduce.text?.isEmpty == false && userPassword.text == checkPassword.text && profileImage.image != nil {
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
         }
     }
-    
 }
 
 extension SecondViewController: UITextViewDelegate {
@@ -66,3 +75,42 @@ extension SecondViewController: UITextFieldDelegate {
         checkEnabledButton()
     }
 }
+
+extension SecondViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func presentAlbum(){
+        
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("picker -> \(String(describing: info[UIImagePickerController.InfoKey.imageURL]))")
+       
+        if cnt % 2 == 0 {
+            if let image = info[.editedImage] as? UIImage {
+                profileImage.image = image
+            }
+        } else {
+            if let image = info[.originalImage] as? UIImage {
+                profileImage.image = image
+            }
+        }
+            
+        cnt += 1
+        print(cnt)
+        checkEnabledButton()
+        dismiss(animated: true, completion: nil)
+    }
+        
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
