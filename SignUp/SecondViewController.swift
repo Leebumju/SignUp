@@ -22,28 +22,6 @@ class SecondViewController: UIViewController {
         self.view.endEditing(true)
     }
 
-
-    
-    @IBAction func checkEmptyID(_ sender: UITextField) {
-        if sender.text?.isEmpty == true {
-            nextButton.isEnabled = false
-        }
-    }
-    
-    @IBAction func checkEmptyPassword(_ sender: UITextField) {
-        if sender.text?.isEmpty == true {
-            nextButton.isEnabled = false
-        }
-    }
-    // 이게 최종체크를 여기서만 하니까 문제가 발생하네 , delegate써서 하는게 더 좋을듯??
-    @IBAction func checklEqualPassword(_ sender: UITextField) {
-        if sender.text?.isEmpty == false && userPassword.text == sender.text && a == 1 {
-            nextButton.isEnabled = true
-        } else {
-            nextButton.isEnabled = false
-        }
-    }
-    
     @IBAction func touchUpSetButton(_ sender: UIButton) {
         UserInformation.shared.userID = userID.text
         UserInformation.shared.userPassword = userPassword.text
@@ -55,6 +33,9 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         essentialFieldList = [userID,userPassword,checkPassword]
         selfIntroduce.delegate = self
+        userID.delegate = self
+        userPassword.delegate = self
+        checkPassword.delegate = self
         nextButton.isEnabled = false
     }
     
@@ -62,10 +43,26 @@ class SecondViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func checkEnabledButton() {
+        if userID.text?.isEmpty == false && userPassword.text?.isEmpty == false && selfIntroduce.text?.isEmpty == false && userPassword.text == checkPassword.text {
+            nextButton.isEnabled = true
+        } else {
+            nextButton.isEnabled = false
+        }
+    }
+    
 }
 
 extension SecondViewController: UITextViewDelegate {
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-        a = 1
+        checkEnabledButton()
+    }
+}
+
+extension SecondViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkEnabledButton()
     }
 }
