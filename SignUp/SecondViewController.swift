@@ -22,11 +22,10 @@ class SecondViewController: UIViewController {
         self.view.endEditing(true)
     }
 
-    
+    //shared: 싱클톤 패턴
     @IBAction func touchUpSetButton(_ sender: UIButton) {
         UserInformation.shared.userID = userID.text
         UserInformation.shared.userPassword = userPassword.text
-        UserInformation.shared.checkPassword = checkPassword.text
         UserInformation.shared.selfIntroduce = selfIntroduce.text
     }
     

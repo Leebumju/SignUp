@@ -13,7 +13,7 @@ class UserInformation {
     
     var userID: String?
     var userPassword: String?
-    var checkPassword: String?
     var selfIntroduce: String?
-    
+    var userPhoneNumber: String?
+    var userBirthDate: String?
 }
